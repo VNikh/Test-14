@@ -1,0 +1,56 @@
+package Launch_Browser;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Forward_Back_Method 
+{
+	public static void main(String[]args) throws InterruptedException
+	{
+		//Parameter-I: Name of the Browser
+		 //Parameter-II:Path of chromeDriver.exe file
+		System.setProperty("webdriver.chrome.driver","C:\\Program Files\\Java\\chromedriver_win32\\chromedriver.exe\\");
+		
+		//Create object of Chromedriver class and provide reference of WebDriver(upcasting)
+		WebDriver driver=new ChromeDriver();
+		
+		//To open an application/To enter an URL
+		 driver.navigate().to("https://www.kesari.in/");   // driver.get("https://www.kesari.in/");-----also can be used
+		
+		//To Wait on page for sometime/2sec=2000
+		Thread.sleep(2000);
+		
+		//To open URL
+	     driver.navigate().to("https://kite.zerodha.com"); //driver.get("https://kite.zerodha.com"); ---also can be used
+		
+		Thread.sleep(2000);
+		
+		//To go backward to the first page
+		driver.navigate().back();
+		
+		Thread.sleep(2000);
+		
+		//To go forward to next page
+		driver.navigate().forward();
+		
+		//To refresh the page
+		driver.navigate().refresh();
+		
+	    Thread.sleep(2000);
+	    
+	    //To Maximize The window
+	    driver.manage().window().maximize();
+	    
+	    Thread.sleep(5000);
+	    
+	    //To Minimize the window
+	    driver.manage().window().minimize();  //manage is the method of Webdriver interface which return returntype Option Interface in which Window method is present which provide returntype Window interface in which maximize method is present used to maximise the Window of Browser
+	    
+		//TO get Title of WEB PAGE
+	    
+	     String Title=driver.getTitle();
+	     System.out.println(Title);
+		
+	}
+
+}
